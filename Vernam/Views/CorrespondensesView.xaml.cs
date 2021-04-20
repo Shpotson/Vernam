@@ -14,11 +14,11 @@ using System.Windows.Shapes;
 namespace Vernam.Views
 {
     /// <summary>
-    /// Interaction logic for HomeView.xaml
+    /// Interaction logic for UserControl1.xaml
     /// </summary>
-    public partial class HomeView : UserControl
+    public partial class CorrespondensesView : UserControl
     {
-        public HomeView()
+        public CorrespondensesView()
         {
             InitializeComponent();
         }

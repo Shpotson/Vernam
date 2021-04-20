@@ -5,6 +5,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Vernam"
+        xmlns:viewModel="clr-namespace:Vernam.ViewModels"
         mc:Ignorable="d"
         Height="600"
         Width="900"
@@ -17,7 +18,11 @@
         
         StateChanged="MainWindowID_StateChanged">
 
-    <Border Background="#06A5A2" CornerRadius="10"
+    <Window.DataContext>
+        <viewModel:MainViewModel/>
+    </Window.DataContext>
+
+        <Border Background="#06A5A2" CornerRadius="10"
             MouseLeftButtonDown="Window_MouseLeftButtonDown">
         <Grid x:Name="Anchor" >
             <Grid.RowDefinitions>
@@ -42,15 +47,14 @@
                         FontSize="18"
                         Style="{StaticResource HeadButtonTheme}"
                         GroupName="Head"
-                                 ></RadioButton>
+                        IsChecked="True"/>
                     <RadioButton x:Name="ProfileRadioButton"
                         Content="Profile"
                         Width="89"
                         Foreground="White"
                         FontSize="18"
                         Style="{StaticResource HeadButtonTheme}"
-                        GroupName="Head"
-                                 ></RadioButton>
+                        GroupName="Head"/>
                 </StackPanel>
 
                 <Grid Grid.Column="3">
@@ -74,8 +78,7 @@
                         Foreground="White"
                         Background="#AE1E21"
                         FontSize="18"
-                        Style="{StaticResource LogOutButtonTheme}"
-                                 ></Button>
+                        Style="{StaticResource LogOutButtonTheme}"/>
                     <Button Background="#AE1E21"
                         Click="Minimize_Click"
                         Grid.Row="1"
@@ -84,8 +87,7 @@
                         Height="30"
                         Foreground="White"
                         FontSize="25"
-                        Style="{StaticResource MinimizeButtonTheme}"
-                                 ></Button>
+                        Style="{StaticResource MinimizeButtonTheme}"/>
                     <Button Background="#AE1E21"
                         Click="Exit_Click"
                         Grid.Row="1"
@@ -94,9 +96,7 @@
                         Height="30"
                         Foreground="White"
                         FontSize="25"
-                        Style="{StaticResource ExitButtonTheme}"
-                                 ></Button>
-
+                        Style="{StaticResource ExitButtonTheme}"/>
                 </Grid>
 
                 <Label
@@ -105,10 +105,12 @@
                        Foreground="White"
                        FontSize="22"
                        FontFamily="Fonts\carmaten.ttf"
-                           Height="30" Width="90"> Vernam </Label>
-
-
+                           Height="30" Width="90">
+                    Vernam
+                </Label>
             </Grid>
+            <ContentControl Grid.Row="1"
+                            Content="{Binding CurrentView}"/>
         </Grid>
     </Border>
 

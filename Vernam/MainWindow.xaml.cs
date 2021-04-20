@@ -25,7 +25,7 @@ namespace Vernam
         bool isMinimized = false;
         public MainWindow()
         {
-                InitializeComponent();
+            InitializeComponent();
         }
 
         private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
