@@ -1,0 +1,40 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Vernam.Themes">
+    <Style TargetType="{x:Type CheckBox}" x:Key="CheckBoxTheme">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type CheckBox}" x:Name="template">
+                    <Grid>
+                        <CheckBox IsChecked="{TemplateBinding IsChecked}" x:Name="proxyBox" Visibility="Hidden"/>
+                        <Rectangle Width="30" Height="30" Fill="#013130"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"
+                                   RadiusX="10"
+                                   RadiusY="10"/>
+                        <Rectangle Width="15" Height="15" Fill="White"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"
+                                   RadiusX="5"
+                                   RadiusY="5"
+                                   x:Name="CheckRectangle">
+                            <Rectangle.Style>
+                                <Style TargetType="Rectangle">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding IsChecked, ElementName=proxyBox}" Value="True">
+                                            <Setter Property="Visibility" Value="Visible"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                    <Setter Property="Visibility" Value="Hidden"/>
+                                </Style>
+                            </Rectangle.Style>
+                        </Rectangle>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+        
+    </Style>
+    
+</ResourceDictionary>

@@ -14,6 +14,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Vernam.ViewModels;
 
 namespace Vernam
 {
@@ -26,6 +27,7 @@ namespace Vernam
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new MainViewModel();
         }
 
         private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)

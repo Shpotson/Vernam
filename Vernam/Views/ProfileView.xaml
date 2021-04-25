@@ -7,6 +7,14 @@
              mc:Ignorable="d" 
              Height="540"
              Width="900">
+    <UserControl.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="TextAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="15"/>
+        </Style>
+    </UserControl.Resources>
     <Grid Background="#035251">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -21,8 +29,41 @@
             </Grid.RowDefinitions>
 
             <Ellipse Fill="#013130" Width="100" Height="100" Margin="26,18,324,17" />
-            <TextBox Style="{StaticResource SearchBoxTheme}" Width="200"
-                     Height="30" Margin="172,53,78,52"/>
+            <TextBox Style="{StaticResource FieldTheme}" Width="200"
+                     Height="30" Margin="172,53,78,52"
+                     Text="Your name is right here"/>
+
+            <Line X1="20" Y1="130" X2="400" Y2="130"
+                      Stroke="#013130"
+                      StrokeThickness="5"></Line>
+            <Grid Grid.Row="1" Background="Transparent">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <CheckBox HorizontalAlignment="Center" VerticalAlignment="Center"
+                          Style="{StaticResource CheckBoxTheme}"
+                          Grid.Row="0"/>
+                <CheckBox HorizontalAlignment="Center" VerticalAlignment="Center"
+                          Style="{StaticResource CheckBoxTheme}"
+                          Grid.Row="1"/>
+                <CheckBox HorizontalAlignment="Center" VerticalAlignment="Center"
+                          Style="{StaticResource CheckBoxTheme}"
+                          Grid.Row="2"/>
+                <TextBlock Grid.Row="0" Grid.Column="1" Text="text"/>
+                <TextBlock Grid.Row="1" Grid.Column="1" Text="text"/>
+                <TextBlock Grid.Row="2" Grid.Column="1" Text="text"/>
+            </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+
+                </Grid.RowDefinitions>
+            </Grid>
         </Grid>
     </Grid>
 </UserControl>

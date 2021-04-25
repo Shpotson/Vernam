@@ -13,6 +13,8 @@
                 <ResourceDictionary Source="Themes/ExitTheme.xaml"></ResourceDictionary>
                 <ResourceDictionary Source="Themes/MinimizeTheme.xaml"></ResourceDictionary>
                 <ResourceDictionary Source="Themes/SearchBoxTheme.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="Themes/FieldTheme.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="Themes/CheckBoxTheme.xaml"></ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
 
             <DataTemplate DataType="{x:Type viewModel:CorrespondensesViewModel}">

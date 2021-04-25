@@ -8,9 +8,18 @@ namespace Vernam.Core
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        protected void OnPropretyChanged([CallerMemberName] string name = null)
+        protected void OnPropertyChanged(string propertyName)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+            this.OnPropertyChanged(new PropertyChangedEventArgs(propertyName));
+        }
+
+        protected void OnPropertyChanged(PropertyChangedEventArgs e)
+        {
+            var handler = this.PropertyChanged;
+            if (handler != null)
+            {
+                handler(this, e);
+            }
         }
     }
 }

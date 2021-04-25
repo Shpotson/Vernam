@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using Vernam.ViewModels;
 
 namespace Vernam
 {
@@ -14,4 +15,6 @@ namespace Vernam
     public partial class App : Application
     {
     }
+
+
 }

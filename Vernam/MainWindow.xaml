@@ -18,11 +18,11 @@
         
         StateChanged="MainWindowID_StateChanged">
 
-    <Window.DataContext>
-        <viewModel:MainViewModel/>
-    </Window.DataContext>
+    <Window.Resources>
+        <viewModel:MainViewModel x:Key="vm"></viewModel:MainViewModel> 
+    </Window.Resources>
 
-        <Border Background="#06A5A2" CornerRadius="10"
+    <Border Background="#06A5A2" CornerRadius="10"
             MouseLeftButtonDown="Window_MouseLeftButtonDown">
         <Grid x:Name="Anchor" >
             <Grid.RowDefinitions>
@@ -47,14 +47,16 @@
                         FontSize="18"
                         Style="{StaticResource HeadButtonTheme}"
                         GroupName="Head"
-                        IsChecked="True"/>
+                        IsChecked="True"
+                        Command="{Binding Path=CorrCommand}"/>
                     <RadioButton x:Name="ProfileRadioButton"
                         Content="Profile"
                         Width="89"
                         Foreground="White"
                         FontSize="18"
                         Style="{StaticResource HeadButtonTheme}"
-                        GroupName="Head"/>
+                        GroupName="Head"
+                        Command="{Binding Path=ProfileCommand}"/>
                 </StackPanel>
 
                 <Grid Grid.Column="3">
@@ -110,7 +112,7 @@
                 </Label>
             </Grid>
             <ContentControl Grid.Row="1"
-                            Content="{Binding CurrentView}"/>
+                            Content="{Binding Path=CurrentView, UpdateSourceTrigger=PropertyChanged,  Mode=OneWay}"/>
         </Grid>
     </Border>
 
